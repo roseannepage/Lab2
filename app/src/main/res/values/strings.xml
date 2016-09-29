@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lab 2</string>
     <string name="hello_message">Hello World!</string>
@@ -11,5 +12,7 @@
     <string name="switchBtn">Enable Something</string>
     <string name="imgBtn">Star Button</string>
     <string name="password">Password</string>
+    <string name="loginBtn">Login</string>
+
 
 </resources>
