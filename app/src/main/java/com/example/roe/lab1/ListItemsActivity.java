@@ -1,13 +1,17 @@
 package com.example.roe.lab1;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +24,7 @@ public class ListItemsActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageButton imgBtn;
     Switch switchbtn;
-
+    CheckBox checkbox1;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -36,6 +40,7 @@ public class ListItemsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_items);
         Log.i(ACTIVITY_NAME, "In onCreate()");
         imgBtn = (ImageButton) findViewById(R.id.imageButton);
+
 
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,12 +60,12 @@ public class ListItemsActivity extends AppCompatActivity {
                 Toast toast;
                 try {
                     if (isChecked) {
-                        text = "Switch is On";// "Switch is Off"
-                        duration = Toast.LENGTH_SHORT; //= Toast.LENGTH_LONG if Off
+                        text = getString(R.string.switch_on);//
+                        duration = Toast.LENGTH_SHORT;
                     }
                     else {
-                        text = "Switch is Off";// "Switch is Off"
-                        duration = Toast.LENGTH_LONG; //= Toast.LENGTH_LONG if Off
+                        text = getString(R.string.switch_off);
+                        duration = Toast.LENGTH_LONG;
                     }
 
 
@@ -73,6 +78,31 @@ public class ListItemsActivity extends AppCompatActivity {
 
             }
         });
+
+        checkbox1 = (CheckBox) findViewById(R.id.checkBox);
+        checkbox1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
+                builder.setMessage(R.string.dialog_message)
+                        .setTitle(R.string.dialog_title)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+                                Intent resultIntent = new Intent();
+                                resultIntent.putExtra("Response", getString(R.string.passed_message));
+                                setResult(Activity.RESULT_OK, resultIntent);
+                                finish();
+                                }
+                            })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+
+                            }
+                        })
+                   .show();
+            }
+        });
+
     }
 
     @Override

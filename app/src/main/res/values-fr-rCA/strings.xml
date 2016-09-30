@@ -13,4 +13,12 @@
     <string name="imgBtn">Bouton Étoile</string>
     <string name="password">Mot de passe</string>
     <string name="loginBtn">Login</string>
+    <string name="switch_on">Le commutateur est activé!</string>
+    <string name="switch_off">Le commutateur est désactivé!</string>
+    <string name="dialog_message">Voulez-vous terminer l\'activité?</string>
+    <string name="dialog_title">Terminer l\'activité?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuler</string>
+    <string name="passed_message">Mon information à partager</string>
+    <string name="toast_message">ListItemsActivity a passé: </string>
 </resources>

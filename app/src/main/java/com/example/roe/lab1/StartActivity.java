@@ -1,11 +1,13 @@
 package com.example.roe.lab1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -57,9 +59,25 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void onActivityResult(int requestCode, int responseCode, Intent data){
+        String messagePassed = data.getStringExtra("Response");
+        if(responseCode == Activity.RESULT_OK){
+            Toast toast;
+            String text;
+            int duration;
+
+            text = getString(R.string.toast_message) + " " +messagePassed;
+            duration = Toast.LENGTH_SHORT; //= Toast.LENGTH_LONG if Off
+            toast = Toast.makeText(this, text, duration);
+            toast.show(); //display your message box
+
+        }
         if(requestCode == 5){
+
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
         }
-    }
+
+
+        }
+
 
 }
