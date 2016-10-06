@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.Toast;
 
 public class StartActivity extends AppCompatActivity {
@@ -14,12 +14,14 @@ public class StartActivity extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "StartActivity";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         Log.i(ACTIVITY_NAME, "In onCreate()");
-        Button button = (Button)findViewById(R.id.button);
+
+
     }
 
     @Override
@@ -52,6 +54,11 @@ public class StartActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
+    public void chatClick(View v) {
+        Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+        startActivity(intent);
+        Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+    }
 
     public void startBtnClick(View v) {
         Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
@@ -75,9 +82,8 @@ public class StartActivity extends AppCompatActivity {
 
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
         }
+    }
 
-
-        }
 
 
 }

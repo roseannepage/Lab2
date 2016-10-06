@@ -21,4 +21,7 @@
     <string name="cancel">Annuler</string>
     <string name="passed_message">Mon information à partager</string>
     <string name="toast_message">ListItemsActivity a passé: </string>
+    <string name="chat_button">Démarrer Clavardage</string>
+    <string name="send_button">Envoyer</string>
+    <string name="chat_text"></string>
 </resources>

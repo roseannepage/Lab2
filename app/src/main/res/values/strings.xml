@@ -21,5 +21,8 @@
     <string name="cancel">Cancel</string>
     <string name="passed_message">My information to share</string>
     <string name="toast_message">ListItemsActivity passed: </string>
+    <string name="chat_button">Start Chat</string>
+    <string name="send_button">Send</string>
+    <string name="chat_text"></string>
 
 </resources>
