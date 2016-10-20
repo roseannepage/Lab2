@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onStart()");
 
         SharedPreferences prefs = getSharedPreferences("DefaultEmail", Context.MODE_PRIVATE);
-        emailInput.append(prefs.getString("DefaultEmail", "email@domain.com"));
+        emailInput.setText(prefs.getString("DefaultEmail", "email@domain.com"));
 
 
     }

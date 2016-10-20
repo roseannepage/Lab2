@@ -1,6 +1,9 @@
 package com.example.roe.lab1;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +27,7 @@ public class ChatWindow extends AppCompatActivity {
     ArrayList<String> array = new ArrayList<String>();
     protected static final String ACTIVITY_NAME = "ChatWindow";
     ChatAdapter messageAdapter;
+    protected SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +38,40 @@ public class ChatWindow extends AppCompatActivity {
         sendBtn = (Button)findViewById(R.id.sendBtn);
         messageAdapter = new ChatAdapter( this );
         chatList.setAdapter (messageAdapter);
+        ChatDatabaseHelper dbHelper = new ChatDatabaseHelper( this );
+        db = dbHelper.getWritableDatabase();
+        Cursor results1 = db.rawQuery("Select * from CHATS", null);
+        results1.moveToFirst();
+
+
+        while (!results1.isAfterLast()) {
+            array.add(results1.getString( results1.getColumnIndex( "MESSAGE") ));
+            Log.i(ACTIVITY_NAME, "SQL MESSAGE:”" + results1.getString( results1.getColumnIndex( "MESSAGE") ) );
+            Log.i(ACTIVITY_NAME, "Cursor’s  column count =" + results1.getColumnCount() );
+
+            for(int i =0; i < results1.getColumnCount(); i++){
+                results1.getColumnName(i);
+            }
+
+            results1.moveToNext(); //move the cursor to the next row
+        }
+
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 array.add(chatText.getText().toString());
+                ContentValues newValues = new ContentValues();
+                newValues.put("MESSAGE", chatText.getText().toString());
+                db.insert(ChatDatabaseHelper.CHAT_TABLE_NAME, null, newValues);
                 messageAdapter.notifyDataSetChanged(); //this restarts the process of getCount()/ getView()
                 chatText.setText("");
             }
         });
+
+
+
+
 
     }
 
@@ -106,6 +135,7 @@ public class ChatWindow extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        db.close();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
