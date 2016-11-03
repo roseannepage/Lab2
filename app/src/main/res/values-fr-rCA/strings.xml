@@ -24,4 +24,9 @@
     <string name="chat_button">Démarrer Clavardage</string>
     <string name="send_button">Envoyer</string>
     <string name="chat_text"></string>
+    <string name="weather_button">Prévisions Météorologiques</string>
+    <string name="title_activity_weather_forecast">WeatherForecast</string>
+    <string name="currentTempText">Température Actuelle</string>
+    <string name="minimumTempText">Température Minimale</string>
+    <string name="maximumTempText">Température Maximale</string>
 </resources>

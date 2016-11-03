@@ -34,5 +34,14 @@
         android:layout_alignEnd="@+id/button"
         android:onClick="chatClick" />
 
+    <Button
+        android:text="@string/weather_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weatherBtn"
+        android:onClick="weatherClick"
+        android:layout_below="@+id/chat_btn"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

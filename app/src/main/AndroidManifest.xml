@@ -12,7 +12,8 @@
             android:name="android.hardware.camera"
             android:required="true" />
 
-        <activity android:name=".StartActivity"></activity>
+
+        <activity android:name=".StartActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
@@ -23,8 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListItemsActivity"></activity>
-        <activity android:name=".ChatWindow"></activity>
+        <activity android:name=".ListItemsActivity" />
+        <activity android:name=".ChatWindow" />
+        <activity
+            android:name=".WeatherForecast"
+            android:label="@string/title_activity_weather_forecast"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

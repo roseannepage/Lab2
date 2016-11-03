@@ -65,6 +65,12 @@ public class StartActivity extends AppCompatActivity {
         startActivityForResult(intent,5);
     }
 
+    public void weatherClick(View v) {
+        Intent intent = new Intent(StartActivity.this, WeatherForecast.class);
+        startActivity(intent);
+        Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
+    }
+
     public void onActivityResult(int requestCode, int responseCode, Intent data){
         String messagePassed = data.getStringExtra("Response");
         if(responseCode == Activity.RESULT_OK){
