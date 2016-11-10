@@ -29,5 +29,7 @@
     <string name="currentTempText">Current Temp</string>
     <string name="minimumTempText">Minimum Temp</string>
     <string name="maximumTempText">Maximum Temp</string>
+    <string name="title_message_list">Messages</string>
+    <string name="title_message_detail">Message Detail</string>
 
 </resources>

@@ -33,6 +33,7 @@ public class WeatherForecast extends AppCompatActivity {
     ProgressBar progBar;
     TextView currentT, minT, maxT;
     ImageView imgV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class WeatherForecast extends AppCompatActivity {
         currentT = (TextView)findViewById(R.id.currentTemp);
         imgV = (ImageView)findViewById(R.id.weatherImg) ;
         progBar = (ProgressBar)findViewById(R.id.progressBar);
-        progBar.setMax(10);
+        progBar.setMax(100);
         progBar.setVisibility(View.VISIBLE);
 
         //new ForecastQuery().execute("http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=d99666875e0e51521f0040a3d97d0f6a&mode=xml&units=metric");

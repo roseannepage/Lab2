@@ -55,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void chatClick(View v) {
-        Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+        Intent intent = new Intent(StartActivity.this, MessageListActivity.class);
         startActivity(intent);
         Log.i(ACTIVITY_NAME, "User clicked Start Chat");
     }
