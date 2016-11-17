@@ -28,8 +28,7 @@
         app:layoutManager="LinearLayoutManager"
         tools:context="com.example.roe.lab1.MessageListActivity"
         tools:listitem="@layout/message_list_content" />-->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:id="@+id/activity_chat_window"
         android:layout_width="250dp"
         android:layout_height="match_parent"

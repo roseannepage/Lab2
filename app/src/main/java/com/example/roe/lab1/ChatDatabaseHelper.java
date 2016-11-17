@@ -22,6 +22,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("CREATE TABLE " + CHAT_TABLE_NAME +
                 " (ID INTEGER PRIMARY KEY AUTOINCREMENT, MESSAGE TEXT);"  );
         Log.i("ChatDatabaseHelper", "Calling onCreate");
+
     }
 
     @Override

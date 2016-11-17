@@ -35,7 +35,7 @@
         <activity
             android:name=".MessageListActivity"
             android:label="@string/title_message_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MessageDetailActivity"
             android:label="@string/title_message_detail"
@@ -45,6 +45,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.roe.lab1.MessageListActivity" />
         </activity>
+        <activity
+            android:name=".TestToolbar"
+            android:label="@string/title_activity_test_toolbar"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+
+
+
     </application>
 
 </manifest>

@@ -54,6 +54,12 @@ public class StartActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
+    public void toolbarClick(View v) {
+        Intent intent = new Intent(StartActivity.this, TestToolbar.class);
+        startActivity(intent);
+        Log.i(ACTIVITY_NAME, "User clicked test toolbar");
+    }
+
     public void chatClick(View v) {
         Intent intent = new Intent(StartActivity.this, MessageListActivity.class);
         startActivity(intent);
@@ -70,6 +76,8 @@ public class StartActivity extends AppCompatActivity {
         startActivity(intent);
         Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
     }
+
+
 
     public void onActivityResult(int requestCode, int responseCode, Intent data){
         String messagePassed = data.getStringExtra("Response");
